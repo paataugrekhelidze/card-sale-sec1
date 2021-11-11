@@ -1,6 +1,6 @@
 # Homework 3: Buggiest Web Application
 
-## Introduction
+## Introduction -
 
 Unfortunately it seems your company never learns. Yet again the company
 has decided to cut costs and hire Shoddycorp's Cut-Rate Contracting to 
