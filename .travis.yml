@@ -7,8 +7,8 @@ python:
 before_install:
   - sudo apt-get -y install python3-pip
   - sudo apt-get -y install python-dev graphviz libgraphviz-dev pkg-config
-install:  
-  - pip install coverage
+install:
   - pip install -r requirements.txt
+  - pip install django --quiet
 script:
   - python manage.py test
