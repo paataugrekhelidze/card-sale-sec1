@@ -1,9 +1,13 @@
+GitHub Repo: https://github.com/paataugrekhelidze/card-sale-sec1.git
+name: Paata Ugrekhelidze 
+UNI: pu2157
+
 1. XSS - 'director' query parameter can be provided both for the gifting and buying page i.e /buy.html?director=<script>alert(document.cookies);</script>. 
-In {{director | safe}}, safe tag disables django builtin HTML escape protection and now any input will be parsed. 
-Removing the tag will allow Django to use its default HTML escape protection, which changes certain characters to avoid script execution.
+    In {{director | safe}}, safe tag disables django builtin HTML escape protection and now any input will be parsed. 
+    Removing the tag will allow Django to use its default HTML escape protection, which changes certain characters to avoid script execution.
 
 2. CSRF - There is no check who is submitting a gift request. Attacker can simply embed a gifting post call code in another victim page and users will involuntarily gift attacker the products.
-            Django has a builtin csrf protection that forces users to provide csrf token. requests coming from another server will not have a csrf token and thus the call will return error 403.
+    Django has a builtin csrf protection that forces users to provide csrf token. requests coming from another server will not have a csrf token and thus the call will return error 403.
 
 3. SQL Attack - signatures variable can be used to perform a SQL injection. we can modify a signature variable in gftcrd file.
     when signature = "' union select password as id from LegacySite_user where username = 'admin"
